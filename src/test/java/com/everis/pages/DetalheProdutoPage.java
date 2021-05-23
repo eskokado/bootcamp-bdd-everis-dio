@@ -13,7 +13,7 @@ public class DetalheProdutoPage extends BasePage {
 	
 	@FindBy(css = ".icon-plus")
 	protected WebElement botaoAumentarQuantidade;		
-	
+		
 	public DetalheProdutoPage() {
 		PageFactory.initElements(Hooks.getDriver(), this);
 	}
@@ -22,6 +22,4 @@ public class DetalheProdutoPage extends BasePage {
 		botaoAumentarQuantidade.click();
 		log("Aumentou a quantidade do produto");
 	}
-
-
 }

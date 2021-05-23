@@ -13,11 +13,16 @@ public class ResultadoPesquisaSteps {
 		resultadoPesquisaPage.adicionarProdutoAoCarrinho(nomeProduto);
 	}
 
+	@E("^adicionar o produto \"(.*)\" ao carrinho$")
+	public void eAdicionarProdutoAoCarrinho(String nomeProduto) {
+		ResultadoPesquisaPage resultadoPesquisaPage = new ResultadoPesquisaPage();
+		resultadoPesquisaPage.eAdicionarProdutoAoCarrinho(nomeProduto);
+	}
+
 	@E("^acessa o produto \"(.*)\"$")
 	public void acessarProduto(String nomeProduto) {
 		ResultadoPesquisaPage resultadoPesquisaPage = new ResultadoPesquisaPage();
 		resultadoPesquisaPage.acessarProduto(nomeProduto);
-	}
-
+	}	
 	
 }

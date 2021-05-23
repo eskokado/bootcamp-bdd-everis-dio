@@ -14,7 +14,7 @@ public class ResultadoPesquisaPage extends BasePage {
 	
 	@FindBy(css = "[title='Proceed to checkout']")
 	protected WebElement botaoProsseguir;
-	
+
 	public ResultadoPesquisaPage() {
 		PageFactory.initElements(Hooks.getDriver(), this);
 	}
@@ -33,4 +33,13 @@ public class ResultadoPesquisaPage extends BasePage {
     	tituloProduto.click();
     	log("Acessou o produto " + nomeProduto);
     }
+
+	public void eAdicionarProdutoAoCarrinho(String nomeProduto) {
+		WebElement nomeProdutoTela = driver.findElement(By.xpath(".//*[@itemprop='name']/*[contains(text(), '" + nomeProduto + "')] | .//*[@itemprop='name'][text()='" + nomeProduto + "']"));
+		moveToElement(nomeProdutoTela);
+		botaoAdicionarAoCarrinho.click();
+		waitElement(botaoProsseguir, 10).click();
+		log("Adicionou o produto [" + nomeProduto + "] ao carrinho");
+	}
+
 }

@@ -1,7 +1,5 @@
 package com.everis.pages;
 
-import javax.xml.xpath.XPath;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -36,6 +34,12 @@ public class CarrinhoPage extends BasePage {
 		return false;
 	}
 
-	
-	
+	public void acessarCheckout() {
+    	WebElement botaoProsseguir = 
+    			driver.findElement(By.xpath("//*[text()='Proceed to checkout']"));
+    	botaoProsseguir.click();
+		log("Acessou a Page Address.");		
+	}
+
+
 }
